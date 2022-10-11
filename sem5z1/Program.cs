@@ -2,67 +2,47 @@
 //элементов которые заполняются случайными значениями в диапазоне 
 //от N до M, находит среднее арифметическое элементов этих 2 массивов и далее выводит на экран результат суммы средних арифметических
 
-Console.Clear();
-
-Console.WriteLine("Введите размер 1го массива:");
-int size = Convert.ToInt32(Console.ReadLine());
-
-Console.WriteLine("Введите минимальное возможное значение в первом массиве:");
-int min1 = int.Parse(Console.ReadLine());
-Console.WriteLine("Введите максимальное возможное значение в первом массиве:");
-int max1 = int.Parse(Console.ReadLine());
-
-Random random = new Random();
-
-int[] arrayOne = new int[size];
-
-for (int i = 0; i < arrayOne.Length; i++)
-{
-    arrayOne[i] = new Random().Next(min1, max1 + 1);
-}
-
-Console.WriteLine("Первый массив: [ " + String.Join(",", arrayOne) + " ]");
-
-
-
-Console.WriteLine("Введите размер 2го массива:");
-int size2 = Convert.ToInt32(Console.ReadLine());
-
-Console.WriteLine("Введите минимальное возможное значение во втором массиве:");
-int min2 = int.Parse(Console.ReadLine());
-Console.WriteLine("Введите максимальное возможное значение во втором массиве:");
-int max2 = int.Parse(Console.ReadLine());
-
-
-
-int[] arrayTwo = new int[size2];
-
-for (int i = 0; i < arrayTwo.Length; i++)
-{
-    arrayTwo[i] = new Random().Next(min2, max2 + 1);
-}
-Console.WriteLine("Второй массив: [ " + String.Join(",", arrayTwo) + " ]");
-
-
-int sumArrayOne = 0;
-for (int i = 0; i < arrayOne.Length; i++)
-{
-    sumArrayOne += arrayOne[i];
-}
-
-int averageArrayOne = sumArrayOne / arrayOne.Length;
-Console.WriteLine($"Округлённое среднее арифметическое первого массива: {averageArrayOne}");
-
-
-int sumArrayTwo = 0;
-for (int i = 0; i < arrayTwo.Length; i++)
-{
-    sumArrayTwo += arrayTwo[i];
-}
-int averageArrayTwo = sumArrayTwo / arrayTwo.Length;
-Console.WriteLine($"Округлённое среднее арифметическое второго массива: {averageArrayTwo}");
-
-Console.Write($"Сумма средних арифметических: {averageArrayOne + averageArrayTwo}");
+// Console.Clear();
+// Console.WriteLine("Введите размер 1го массива:");
+// int size = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите минимальное возможное значение в первом массиве:");
+// int min1 = int.Parse(Console.ReadLine());
+// Console.WriteLine("Введите максимальное возможное значение в первом массиве:");
+// int max1 = int.Parse(Console.ReadLine());
+// Random random = new Random();
+// int[] arrayOne = new int[size];
+// for (int i = 0; i < arrayOne.Length; i++)
+// {
+//     arrayOne[i] = new Random().Next(min1, max1 + 1);
+// }
+// Console.WriteLine("Первый массив: [ " + String.Join(",", arrayOne) + " ]");
+// Console.WriteLine("Введите размер 2го массива:");
+// int size2 = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите минимальное возможное значение во втором массиве:");
+// int min2 = int.Parse(Console.ReadLine());
+// Console.WriteLine("Введите максимальное возможное значение во втором массиве:");
+// int max2 = int.Parse(Console.ReadLine());
+// int[] arrayTwo = new int[size2];
+// for (int i = 0; i < arrayTwo.Length; i++)
+// {
+//     arrayTwo[i] = new Random().Next(min2, max2 + 1);
+// }
+// Console.WriteLine("Второй массив: [ " + String.Join(",", arrayTwo) + " ]");
+// int sumArrayOne = 0;
+// for (int i = 0; i < arrayOne.Length; i++)
+// {
+//     sumArrayOne += arrayOne[i];
+// }
+// int averageArrayOne = sumArrayOne / arrayOne.Length;
+// Console.WriteLine($"Округлённое среднее арифметическое первого массива: {averageArrayOne}");
+// int sumArrayTwo = 0;
+// for (int i = 0; i < arrayTwo.Length; i++)
+// {
+//     sumArrayTwo += arrayTwo[i];
+// }
+// int averageArrayTwo = sumArrayTwo / arrayTwo.Length;
+// Console.WriteLine($"Округлённое среднее арифметическое второго массива: {averageArrayTwo}");
+// Console.Write($"Сумма средних арифметических: {averageArrayOne + averageArrayTwo}");
 
 
 
@@ -73,53 +53,40 @@ Console.Write($"Сумма средних арифметических: {average
 //элементов которые заполняются случайными значениями в диапазоне 
 //от N до M, находит среднее арифметическое элементов этих 2 массивов и далее выводит на экран результат суммы средних арифметических
 
-//Console.WriteLine("Введите размер 1го массива:");
-//int size = Convert.ToInt32(Console.ReadLine());
-
-//Console.WriteLine("Введите минимальное возможное значение в первом массиве:");
-//int min1 = int.Parse(Console.ReadLine());
-
-//Console.WriteLine("Введите максимальное возможное значение в первом массиве:");
-//int max1 = int.Parse(Console.ReadLine());
-
-//int [] firstArray = FillArray(size,min1,max1); 
-
-//Console.WriteLine("Первый массив: [ " + String.Join(",", firstArray) + " ]");
-
-//Console.WriteLine("Введите размер 2го массива:");
-//int size2 = Convert.ToInt32(Console.ReadLine());
-
-//Console.WriteLine("Введите минимальное возможное значение во втором массиве:");
-//int min2 = int.Parse(Console.ReadLine());
-
-//Console.WriteLine("Введите максимальное возможное значение во втором массиве:");
-//int max2 = int.Parse(Console.ReadLine());
-
-//int [] secondArray = FillArray(size2,min2,max2);
-
-//Console.WriteLine("Второй массив: [ " + String.Join(",", secondArray) + " ]");
-
-//Console.WriteLine($"Округлённое среднее арифметическое первого массива: {FindAverageByArray(firstArray)}");
-//Console.WriteLine($"Округлённое среднее арифметическое второго массива: {FindAverageByArray(secondArray)}");
-
-//Console.Write($"Сумма средних арифметических: {FindAverageByArray(firstArray) + FindAverageByArray(secondArray)}");
-
-//int[] FillArray(int size, int min, int max)
-//{
-  //  int[] filledArray = new int[size];
-    //for (int i = 0; i < filledArray.Length; i++)
-    //{
-      //  filledArray[i] = new Random().Next(min, max + 1);
-    //}
-    //return filledArray;
-//}
-
-//int FindAverageByArray(int[] array)
-//{
-  //  int sumByElements = 0;
-    //for (int i = 0; i < array.Length; i++)
-    //{
-      //  sumByElements += array[i];
-    //}
-    //return sumByElements / array.Length;
-//}
+Console.WriteLine("Введите размер 1го массива:");
+int size = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите минимальное возможное значение в первом массиве:");
+int min1 = int.Parse(Console.ReadLine());
+Console.WriteLine("Введите максимальное возможное значение в первом массиве:");
+int max1 = int.Parse(Console.ReadLine());
+int[] firstArray = FillArray(size, min1, max1);
+Console.WriteLine("Первый массив: [ " + String.Join(",", firstArray) + " ]");
+Console.WriteLine("Введите размер 2го массива:");
+int size2 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите минимальное возможное значение во втором массиве:");
+int min2 = int.Parse(Console.ReadLine());
+Console.WriteLine("Введите максимальное возможное значение во втором массиве:");
+int max2 = int.Parse(Console.ReadLine());
+int[] secondArray = FillArray(size2, min2, max2);
+Console.WriteLine("Второй массив: [ " + String.Join(",", secondArray) + " ]");
+Console.WriteLine($"Округлённое среднее арифметическое первого массива: {FindAverageByArray(firstArray)}");
+Console.WriteLine($"Округлённое среднее арифметическое второго массива: {FindAverageByArray(secondArray)}");
+Console.Write($"Сумма средних арифметических: {FindAverageByArray(firstArray) + FindAverageByArray(secondArray)}");
+int[] FillArray(int size, int min, int max)
+{
+    int[] filledArray = new int[size];
+    for (int i = 0; i < filledArray.Length; i++)
+    {
+        filledArray[i] = new Random().Next(min, max + 1);
+    }
+    return filledArray;
+}
+int FindAverageByArray(int[] array)
+{
+    int sumByElements = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        sumByElements += array[i];
+    }
+    return sumByElements / array.Length;
+}
